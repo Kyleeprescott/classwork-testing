@@ -1,5 +1,5 @@
 package testjava;
-
+import java.util.Scanner;
 public class testjava {
 
 	public static void main(String[] args) {
@@ -42,7 +42,9 @@ public class testjava {
 		char X ='\u0058' ;
 		char Y ='\u0059' ;
 		char Z ='\u005A' ;
-	
+		Scanner input = new Scanner(System.in);
+		char x= input.next().charAt(0);
+		
 		
 		
 
