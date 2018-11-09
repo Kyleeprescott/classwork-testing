@@ -21,15 +21,16 @@ public class BianaryNumbers {
 	 String set5="";
 	 
 	 //input numbers
-	 int inputnum;
+	 int inputnum=0;
 	 
 	 int whatsLeft;
 	 
 	 
 	 for(int i=0; i<31;i++) {
 		 String biannum ="";
-		 System.out.println("enter a number between 0 and 225");
-		 inputnum = input.nextInt();
+		 
+		 inputnum = inputnum+1;
+		 
 		 
 		 
 		 whatsLeft=inputnum;
@@ -42,7 +43,7 @@ public class BianaryNumbers {
 			 biannum = biannum+"0";
 		 }
 		 if(whatsLeft>=num64) {
-			 whatsLeft= inputnum-64;
+			 whatsLeft=  whatsLeft-64;
 			 biannum=biannum+"1";
 			 
 		 }
@@ -50,7 +51,7 @@ public class BianaryNumbers {
 			 biannum=biannum+"0";
 		 }
 		 if(whatsLeft>=num32) {
-			 whatsLeft= inputnum-32;
+			 whatsLeft=  whatsLeft-32;
 			 biannum=biannum+"1";
 			 
 		 }
@@ -58,7 +59,7 @@ public class BianaryNumbers {
 			 biannum=biannum+"0";
 		 }
 		 if(whatsLeft>=num16) {
-			 whatsLeft= inputnum-16;
+			 whatsLeft=  whatsLeft-16;
 			 biannum=biannum+"1";
 			 
 		 }
@@ -66,7 +67,7 @@ public class BianaryNumbers {
 			 biannum=biannum+"0";
 		 }
 		 if(whatsLeft>=num8) {
-			 whatsLeft= inputnum-8;
+			 whatsLeft=  whatsLeft-8;
 			 biannum=biannum+"1";
 			 
 		 }
@@ -74,7 +75,7 @@ public class BianaryNumbers {
 			 biannum=biannum+"0";
 		 }
 		 if(whatsLeft>=num4) {
-			 whatsLeft= inputnum-4;
+			 whatsLeft= whatsLeft-4;
 			 biannum=biannum+"1";
 			 
 		 }
@@ -82,7 +83,7 @@ public class BianaryNumbers {
 			 biannum=biannum+"0";
 		 }
 		 if(whatsLeft>=num2) {
-			 whatsLeft= inputnum-2;
+			 whatsLeft=  whatsLeft-2;
 			 biannum=biannum+"1";
 			 
 		 }
@@ -90,14 +91,14 @@ public class BianaryNumbers {
 			 biannum=biannum+"0";
 		 }
 		 if(whatsLeft>=num1) {
-			 whatsLeft= inputnum-1;
+			 whatsLeft=  whatsLeft-1;
 			 biannum=biannum+"1";
 			 
 		 }
 		 else {
 			 biannum=biannum+"0";
 		 }
-		 System.out.println("the bianary number for "+inputnum+ " is "+biannum);
+		 
 		 //check indexing of bianary numbers
 		 char xnum7 = biannum.charAt(7);
 		 char xnum6 = biannum.charAt(6);
@@ -107,33 +108,64 @@ public class BianaryNumbers {
 		 
 		 //assign to sets
 		 if(xnum7=='1') {
-			 set1=set1+inputnum;
+			 set1=set1+inputnum+" ";
 		 }
 		 if(xnum6=='1') {
-			 set2=set2+inputnum;
+			 set2=set2+inputnum+" ";
 		 }
 		 if(xnum5=='1') {
-			 set3=set3+inputnum;
+			 set3=set3+inputnum+" ";
 		 }
 		 if(xnum4=='1') {
-			 set4=set4+inputnum;
+			 set4=set4+inputnum+" ";
 		 }
 		 if(xnum3=='1') {
-			 set5=set5+inputnum;
+			 set5=set5+inputnum+" ";
 		 }
-		 // display
-		 System.out.println("set1 is : "+set1);
-		 System.out.println("set2 is : "+set2);
-		 System.out.println("set3 is : "+set3);
-		 System.out.println("set4 is : "+set4);
-		 System.out.println("set5 is : "+set5);
 		 
 		 
 		 
 	 }
+	 int birthday=0;
 	 
+	// display
+			 System.out.println("set1 is : "+set1);
+			 System.out.println("Is your birthday in this list of numbers? yes/no");
+			 String answer1 = input.nextLine();
+			 if (answer1.equals("yes")) {
+				 birthday = birthday=1; 
+			 }
+			 
+			 System.out.println("set2 is : "+set2);
+			 System.out.println("Is your birthday in this list of numbers? yes/no");
+			 String answer2 = input.nextLine();
+			 if (answer2.equals("yes")) {
+				 birthday = birthday=2; 
+			 }
+			 System.out.println("set3 is : "+set3);
+			 System.out.println("Is your birthday in this list of numbers? yes/no");
+			 String answer3 = input.nextLine();
+			 if (answer3.equals("yes")) {
+				 birthday = birthday=4; 
+			 }
+			 System.out.println("set4 is : "+set4);
+			 System.out.println("Is your birthday in this list of numbers? yes/no");
+			 String answer4 = input.nextLine();
+			 if (answer4.equals("yes")) {
+				 birthday = birthday=8; 
+			 }
+			 System.out.println("set5 is : "+set5);
+			 System.out.println("Is your birthday in this list of numbers? yes/no");
+			 String answer5 = input.nextLine();
+			 if (answer5.equals("yes")) {
+				 birthday = birthday=16; 
+			 }
+			 if (answer1.equals("no") && answer2.equals("no") && answer3.equals("no") && answer4.equals("no") && answer5.equals("no")){
+				 System.out.println("You are lying ,try again");
+			 }
+			 
+	 System.out.println("Your birthday is the " +birthday);
 	 
-
 	}
 
 }
